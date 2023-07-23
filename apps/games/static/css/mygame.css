@@ -1,0 +1,15 @@
+
+textarea {
+    color: initial;
+    display: inline-block;
+    background-color: white;
+    resize: auto;
+    cursor: text;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    font: 400 13.3333px Arial;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(169, 169, 169);
+    padding: 2px;
+}

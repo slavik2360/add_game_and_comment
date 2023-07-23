@@ -54,7 +54,8 @@
 
     <!-- jQuery -->
     <script src="/static/vendor/jquery/dist/jquery.min.js"></script>
-    
+
+    <link rel="stylesheet" href="/static/css/mygame.css">
     
 </head>
 
@@ -85,7 +86,7 @@
 <div class="nk-gap-1"></div>
 <!-- END: Breadcrumbs -->
 
-        
+
 
         
 <div class="container">
@@ -351,7 +352,34 @@
 </div>
 <div class="nk-gap-2"></div>
 
+<!-- START: Form Comment -->
 
+<div>
+    <form  class="formss" action="" method="post">
+        {% csrf_token %}
+        <label for="user">Имя: </label>
+        <input type="text" placeholder="Name" name="user" id="user">
+
+        <label for="comment">Комментарий: </label>
+        <input type="text" placeholder="Comment" name="comment" id="comment">
+
+        <label for="rate">Рейтинг: </label>
+        <input type="number" step="1" min="1" max="10" value="5" id="rate" name="rate">
+        <!-- <button type="submit">Опубликовать</button> -->
+    
+        <input type="submit" value="add">
+    </form>
+</div>
+<!-- END: Form Comment -->
+<div class="comments">
+    {% for com in comment %}
+    <div class="cc">
+        <span>{{com.user}}</span>
+        <span>{{com.text}}</span>
+        <span>{{com.rate}}</span>
+    </div>
+    {% endfor %}
+</div>
         
             <!-- START: Footer -->
 <footer class="nk-footer">
